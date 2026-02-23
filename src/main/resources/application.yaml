@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: coaf-analyzer
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4o-mini
+          temperature: 0.2
+          max-tokens: 1000
+
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+logging:
+  level:
+    com.coaf.analyzer: DEBUG
+    org.springframework.ai: INFO
+    org.springframework.web: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+coaf:
+  rules:
+    valor-alto-especie: 50000
+    modo-conservador: true
+    exigir-justificativa-sempre: true
+  analysis:
+    timeout-seconds: 30
+    max-text-length: 5000
