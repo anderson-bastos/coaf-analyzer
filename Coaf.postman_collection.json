@@ -1,0 +1,511 @@
+{
+  "info": {
+    "_postman_id": "4fb3f02a-d117-4fca-ab78-15c73c8a258b",
+    "name": "Coaf",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2784166"
+  },
+  "item": [
+    {
+      "name": "Não Comunicar",
+      "item": [
+        {
+          "name": "Operação Compatível com o Perfil do Cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: Empresa ABC Comércio Ltda, CNPJ: 12.345.678/0001-90, Setor: Comércio varejista, Faturamento mensal: R$ 500.000, Depósito: R$ 45.000 em espécie referente a vendas do dia\",\n    \"clienteId\": \"EMP-001\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: Empresa ABC Comércio Ltda, CNPJ: 12.345.678/0001-90, Setor: Comércio varejista, Faturamento mensal: R$ 500.000, Depósito: R$ 45.000 em espécie referente a vendas do dia\",\n    \"clienteId\": \"EMP-001\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "Transferência dentro do Limite",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: Roberto Mendes, CPF: 123.456.789-00, Profissão: Médico, Renda mensal: R$ 30.000, Transferência bancária: R$ 25.000 para conta própria em outro banco, Pagamento de imposto de renda\",\n    \"clienteId\": \"PF-789\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: Roberto Mendes, CPF: 123.456.789-00, Profissão: Médico, Renda mensal: R$ 30.000, Transferência bancária: R$ 25.000 para conta própria em outro banco, Pagamento de imposto de renda\",\n    \"clienteId\": \"PF-789\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "Investimento com Origem Claramente Declarada",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: Carlos Alberto Silva, Aposentado, 65 anos, Recebeu R$ 200.000 de indenização trabalhista (processo judicial), Depositou em conta poupança e investimentos, Documentação comprobatória apresentada\",\n    \"clienteId\": \"PF-456\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: Carlos Alberto Silva, Aposentado, 65 anos, Recebeu R$ 200.000 de indenização trabalhista (processo judicial), Depositou em conta poupança e investimentos, Documentação comprobatória apresentada\",\n    \"clienteId\": \"PF-456\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "Pagamento de Impostos e Tributos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: Construtora Novo Horizonte Ltda, Faturamento anual: R$ 5 milhões, Pagamento de R$ 150.000 em DARFs (Imposto de Renda Pessoa Jurídica), Guias de recolhimento anexadas\",\n    \"clienteId\": \"EMP-789\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: Construtora Novo Horizonte Ltda, Faturamento anual: R$ 5 milhões, Pagamento de R$ 150.000 em DARFs (Imposto de Renda Pessoa Jurídica), Guias de recolhimento anexadas\",\n    \"clienteId\": \"EMP-789\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "Doação entre Familiares com Documentação",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: Ana Paula Santos, Recebeu R$ 100.000 de doação de seus pais para compra de primeiro imóvel, Escritura de doação registrada em cartório, ITCMD pago\",\n    \"clienteId\": \"PF-321\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: Ana Paula Santos, Recebeu R$ 100.000 de doação de seus pais para compra de primeiro imóvel, Escritura de doação registrada em cartório, ITCMD pago\",\n    \"clienteId\": \"PF-321\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "Venda de Veículo com Documentação",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: Paulo Roberto Souza, Depositou R$ 80.000 referente à venda de um veículo BMW X3 2020, Contrato de compra e venda registrado em cartório, Transferência do veículo realizada no Detran\",\n    \"clienteId\": \"PF-654\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: Paulo Roberto Souza, Depositou R$ 80.000 referente à venda de um veículo BMW X3 2020, Contrato de compra e venda registrado em cartório, Transferência do veículo realizada no Detran\",\n    \"clienteId\": \"PF-654\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "Saque para Pagamento de Funcionários",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: Restaurante Sabor Caseiro Ltda, MEI, Faturamento mensal: R$ 60.000, Saque de R$ 25.000 no 5º dia útil do mês para pagamento de salários de 8 funcionários, Folha de pagamento registrada\",\n    \"clienteId\": \"EMP-234\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: Restaurante Sabor Caseiro Ltda, MEI, Faturamento mensal: R$ 60.000, Saque de R$ 25.000 no 5º dia útil do mês para pagamento de salários de 8 funcionários, Folha de pagamento registrada\",\n    \"clienteId\": \"EMP-234\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "Ressarcimento de Despesas Médicas",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: Dr. Fernando Costa, Médico, Recebeu R$ 45.000 de reembolso de plano de saúde por cirurgia realizada, Documentos do plano de saúde anexados\",\n    \"clienteId\": \"PF-987\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: Dr. Fernando Costa, Médico, Recebeu R$ 45.000 de reembolso de plano de saúde por cirurgia realizada, Documentos do plano de saúde anexados\",\n    \"clienteId\": \"PF-987\"\n  }'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comunicar",
+      "item": [
+        {
+          "name": "Texto Simples (Valor Alto em Espécie)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: João Silva, Profissão: Professor, Renda: R$ 5.000, Depósito em espécie: R$ 80.000\",\n    \"clienteId\": \"12345\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: João Silva, Profissão: Professor, Renda: R$ 5.000, Depósito em espécie: R$ 80.000\",\n    \"clienteId\": \"12345\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "Caso com Paraíso Fiscal",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: Maria Oliveira, Transferência recebida das Ilhas Cayman no valor de US$ 100.000\",\n    \"clienteId\": \"67890\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: Maria Oliveira, Transferência recebida das Ilhas Cayman no valor de US$ 100.000\",\n    \"clienteId\": \"67890\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "Caso de structuring (fracionamento)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: Carlos Santos, Realizou 10 depósitos de R$ 9.900 em diferentes agências no mesmo dia\",\n    \"clienteId\": \"54321\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: Carlos Santos, Realizou 10 depósitos de R$ 9.900 em diferentes agências no mesmo dia\",\n    \"clienteId\": \"54321\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "Caso com prioridade ALTA",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"texto\": \"Cliente: Empresa ABC, Setor: Joalheria, Movimentação: R$ 500.000 em espécie\",\n    \"clienteId\": \"98765\",\n    \"prioridade\": \"ALTA\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"texto\": \"Cliente: Empresa ABC, Setor: Joalheria, Movimentação: R$ 500.000 em espécie\",\n    \"clienteId\": \"98765\",\n    \"prioridade\": \"ALTA\"\n  }'"
+          },
+          "response": []
+        },
+        {
+          "name": "Lotes de Clientes",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    \"Cliente: João, Depósito: R$ 100.000 em espécie\",\n    \"Cliente: Maria, Transferência do Panamá: US$ 50.000\",\n    \"Cliente: Empresa XYZ, Setor imobiliário, 10 vendas em 1 mês\"\n  ]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/coaf/analisar/lote",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "coaf",
+                "analisar",
+                "lote"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST http://localhost:8080/api/coaf/analisar/lote \\\n  -H \"Content-Type: application/json\" \\\n  -d '[\n    \"Cliente: João, Depósito: R$ 100.000 em espécie\",\n    \"Cliente: Maria, Transferência do Panamá: US$ 50.000\",\n    \"Cliente: Empresa XYZ, Setor imobiliário, 10 vendas em 1 mês\"\n  ]'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auditorias",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/coaf/auditoria",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "coaf",
+            "auditoria"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET http://localhost:8080/api/coaf/auditoria"
+      },
+      "response": []
+    }
+  ]
+}
